@@ -1,4 +1,5 @@
-from terminal import terminal_game
+from terminal_1v1 import terminal_game
+from terminal_AI_Easy import terminal_AI_random
 class board():
     def __init__(self):
         self.table = [
@@ -48,6 +49,15 @@ class board():
 #---------------------------------------------------------------------------------------#
 
 tabela = board()
-game = terminal_game(tabela)
+game_choose = int(input("Informe o modo de jogo:\n" \
+"1 - Jogador X Jogador\n" \
+"2 - Jogador X IA\n"))
+if game_choose == 1:
+    game = terminal_game(tabela)
+else:
+    dif_level = int(input("\nEscolha a dificuldade:\n" \
+    "1 - Fácil\n2 - Médio\n3 - Difícil\n"))
+    if dif_level == 1:
+        game = terminal_AI_random(tabela)
 game.start()
     
