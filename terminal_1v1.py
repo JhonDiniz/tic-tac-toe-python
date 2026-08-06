@@ -112,11 +112,14 @@ class terminal_game():
                         print(f"\n     Placar\n" \
                             f"Partidas jogadas: {self.board.matches}\n" \
                             f"Jogador 1 | {self.board.victories} X {self.board.loses} | Jogador 2")
-                        time.sleep(0.5)
+                        time.sleep(1.5)
                     elif self.interface() == 2:
                         self.board.reset()
-                        turn = 1
                         self.board.matches = 0
+                        self.board.victories = 0
+                        self.board.loses = 0
+                        self.board.voltar = 1
+                        turn = 1
                     else:
                         print("Programa Finalizado.")
                         self.game_on = False

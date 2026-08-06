@@ -1,5 +1,6 @@
 from terminal_1v1 import terminal_game
 from terminal_AI_Easy import terminal_AI_random
+from terminal_AI_Medium import terminal_AI_smart
 class board():
     def __init__(self):
         self.table = [
@@ -46,8 +47,7 @@ class board():
                         break
             if var != " ":
                 cond = True
-                return cond
-        return False
+        return cond
 
     def reset(self):
         for i in range(len(self.table)):
@@ -59,7 +59,8 @@ class board():
 #---------------------------------------------------------------------------------------#
 
 tabela = board()
-while tabela.voltar != 3:
+while not tabela.voltar:
+    tabela.voltar = 0
     game_choose = int(input("Informe o modo de jogo:\n" \
     "1 - Jogador X Jogador\n" \
     "2 - Jogador X IA\n"))
@@ -70,6 +71,7 @@ while tabela.voltar != 3:
         "1 - Fácil\n2 - Médio\n3 - Difícil\n"))
         if dif_level == 1:
             game = terminal_AI_random(tabela)
+        elif dif_level == 2:
+            game = terminal_AI_smart(tabela)
     game.start()
-    menu = game.interface()
     

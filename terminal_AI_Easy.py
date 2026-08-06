@@ -123,15 +123,18 @@ class terminal_AI_random():
                     if turn == turn_limit or tabela.winCond():
                         if self.interface() == 1:
                             self.board.reset()
-                            turn = 1
                             self.board.matches += 1
+                            turn = 1
                             print(f"\nPartidas jogadas: {self.board.matches}\n" \
                             f"Jogador | {self.board.victories} X {self.board.loses} | IA")
-                            time.sleep(0.5)
+                            time.sleep(1.5)
                         elif self.interface() == 2:
                             self.board.reset()
-                            turn = 1
                             self.board.matches = 0
+                            self.board.victories = 0
+                            self.board.loses = 0
+                            self.board.voltar = 1
+                            turn = 1
                         else:
                             print("Programa Finalizado.")
                             self.game_on = False
