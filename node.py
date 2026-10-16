@@ -3,3 +3,5 @@ class node:
         self.board = board
         self.symbolIA = symIA
         self.symbolP = symP
+        self.score = 0
+        

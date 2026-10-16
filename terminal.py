@@ -31,10 +31,9 @@ class terminal():
                     break
                 elif var == " ":
                     var = test
-                else:
-                    if var != test:
-                        var = " "
-                        break
+                elif var != test:
+                    var = " "
+                    break
             if var != " ":
                 cond = True
         return cond
